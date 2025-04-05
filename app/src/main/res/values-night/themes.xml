@@ -1,0 +1,34 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.Calculator" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Background for LinearLayout -->
+        <item name="android:background">@color/blackBg</item>
+
+        <!-- Background for TableLayout and TableRow -->
+        <item name="android:divider">@color/blackBg</item>
+        <item name="android:dividerHeight">0.5dp</item>
+
+        <!-- Style for EditText -->
+        <item name="android:textColorHint">@color/blackBg</item>
+
+        <!-- General text color (used for most text elements) -->
+        <item name="android:textColor">@color/white</item>
+
+        <!-- Text colors -->
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/white</item>
+
+        <!-- Text color on the primary color (for example, text on buttons or in the toolbar) -->
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- Colors for ListView -->
+        <item name="android:colorControlHighlight">@color/white</item>
+
+        <!-- Colors for ImageView -->
+        <item name="android:tint">@color/white</item>
+
+        <!-- Loading window background color -->
+        <item name="android:windowBackground">@color/blackBg</item>
+
+    </style>
+
+</resources>
