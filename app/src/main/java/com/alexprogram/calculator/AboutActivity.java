@@ -16,6 +16,7 @@
 package com.alexprogram.calculator;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -28,7 +29,7 @@ import com.google.android.material.appbar.MaterialToolbar;
 public class AboutActivity extends AppCompatActivity {
 
     private String[] itemList = new String[] {"Github", "Version", "License"};
-    private String[] subList = new String[] {"GitHub repository link", "1.0.0", "GPLv3" };
+    private String[] subList = new String[] {"GitHub repository link", "1.0.1", "GPLv3" };
     private ListView aboutListView;
     private int[] icons = {
             R.drawable.baseline_code_24,
@@ -61,19 +62,19 @@ public class AboutActivity extends AppCompatActivity {
                 // Use switch-case to handle the touch
                 switch (selectedItem) {
                     case "Github":
-
+                        openUrlInBrowser("https://github.com/Oleksii432/Calculator.git");
                         break;
 
                     case "Version":
                         versionClickCount++; // Increase counter
-                        // If pressed more than 6 times, show Toast
-                        if (versionClickCount > 6) {
+                        // If pressed more than 4 times, show Toast
+                        if (versionClickCount > 4) {
                             Toast.makeText(AboutActivity.this, "You will succeed!", Toast.LENGTH_SHORT).show();
                         }
                         break;
 
                     case "License":
-
+                        openUrlInBrowser("https://github.com/Oleksii432/Calculator/blob/main/COPYING");
                         break;
 
                     default:
@@ -81,6 +82,11 @@ public class AboutActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private void openUrlInBrowser(String url) {
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+        startActivity(browserIntent);
     }
 
     // Button back "Back"
